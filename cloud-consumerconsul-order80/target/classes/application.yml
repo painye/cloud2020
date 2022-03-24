@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: cloud-consumer-order
+
+  cloud:
+    consul:
+      port: 8599
+      host: 192.168.86.5
+      discovery:
+        service-name: ${spring.application.name}
+        prefer-ip-address: true
+        heartbeat:
+          enabled: true
