@@ -1,4 +1,4 @@
-package com.yp.springclouf.controller;
+package com.yp.springcloud.controller;
 /**
  * @author pan
  * @date 2022/3/24 21:32

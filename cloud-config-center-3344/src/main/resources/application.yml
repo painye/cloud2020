@@ -12,8 +12,21 @@ spring:
           ####搜索目录
           search-paths:
             - springcloud-config
+          force-pull: true
       ####读取分支
       label: master
+
+  bus:
+    refresh:
+      enabled: true
+
+  #rabbitmq相关配置,rabbitmq在spring的下面
+  rabbitmq:
+    host: 47.113.231.60
+    port: 5672
+    username: guest
+    password: guest
+
 
 #服务注册到eureka地址
 eureka:
@@ -21,3 +34,17 @@ eureka:
     service-url:
       defaultZone: http://localhost:7001/eureka
 
+
+
+##rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
+  # 不加Post请求包405
+  endpoint:
+    bus-env:
+      enabled: true
+      bus-refresh:
+        enabled: true
