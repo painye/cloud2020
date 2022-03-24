@@ -60,6 +60,11 @@ public class PaymentController {
         }
     }
 
+    @GetMapping("/payment/lb")
+    public String serverPort(){
+        return "当前端口："+serverPort;
+    }
+
 
     @GetMapping("/payment/discovery")
     public Object discovery(){
