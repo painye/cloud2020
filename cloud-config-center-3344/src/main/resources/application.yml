@@ -42,7 +42,7 @@ management:
     web:
       exposure:
         include: 'bus-refresh'
-  # 不加Post请求包405
+  # 不加Post请求包405，
   endpoint:
     bus-env:
       enabled: true
